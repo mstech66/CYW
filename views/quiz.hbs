@@ -1,0 +1,46 @@
+<script>
+    function openQRCamera(node) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            node.value = "";
+            qrcode.callback = function(res) {
+                if(res instanceof Error) {
+                    alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+                } else {
+                    node.parentNode.previousElementSibling.value = res;
+                }
+            };
+            qrcode.decode(reader.result);
+        };
+        reader.readAsDataURL(node.files[0]);
+    }
+</script>
+<div class="container">
+    <div class="col-sm-2">&nbsp</div>
+    <div class="col-sm-8">
+        <center><h3 style="font-size: 30px;"  class="title">{{userQue}}</h3></center>
+        <br>
+        <form class="form-horizontal" id="form" action="/startGame" method="post">
+            <center>
+                <div class="form-group">
+                    <p  class="quest">{{que}}</p>
+                    <div class="radio">
+                        <label class="options"><input type="radio" name="answer" value="A">{{a}} ({{pA}}) ({{tA}})</label></div>
+                    <div class="radio">
+                        <label class="options"><input type="radio" name="answer" value="B">{{b}} ({{pB}}) ({{tB}})</label></div>
+                    <div class="radio">
+                        <label class="options"><input type="radio" name="answer" value="C">{{c}} ({{pC}}) ({{tC}})</label></div>
+                    <div class="radio">
+                        <label class="options"><input type="radio" name="answer" value="D">{{d}} ({{pD}}) ({{tD}})</label>
+                    </div><br>
+                    <input type=text size=16 placeholder="Scan QR By Clicking ->" class="qrcode-text" name="qrcode"><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label>
+                </div>
+            </center>
+            <center><button type="submit" class="btn btn-default starButton">Submit</button></center>
+        </form>
+        {{# if wrong}}
+        <center><h3 style="font-size: 30px; background-color: red;" class="wrongText">{{wrong}}</h3></center>
+        {{/if}}
+    </div>
+    <div class="col-sm-2">&nbsp</div>
+</div>

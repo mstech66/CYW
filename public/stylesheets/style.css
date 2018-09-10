@@ -1,0 +1,40 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+}
+input, label {vertical-align:middle;}
+.qrcode-text {padding-right:1.7em; margin-right:0}
+.qrcode-text-btn {display:inline-block; background:url(//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg) 50% 50% no-repeat; height:1em; width:1.7em; margin-left:-1.7em; cursor:pointer}
+.qrcode-text-btn > input[type=file] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0; z-index: 100;}
+a {
+  color: #00B7FF;
+}
+@font-face {
+  font-family: Hacked;
+  src: url('/fontface/HACKED.ttf');
+}
+.title{
+  font-family: Hacked;
+  color: red;
+}
+.insert{
+  background-color: black; color: red;
+  font-family: Consolas;
+  text-align: center;
+}
+.starButton{
+  background-color: black; color: red;
+  font-family: Hacked;
+}
+.options{
+  color: red;
+}
+.quest{
+  font-size: 20px;
+  color: red;
+}
+.wrongText{
+  font-family: Hacked;
+  color: black;
+}
