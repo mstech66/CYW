@@ -12,8 +12,8 @@
 - Special thanks to DavidLibeau and Fontspace for fonts: [HACKED](http://www.fontspace.com/davidlibeau/hacked)
 - Of course my brain to generate remaining falsified random QR codes
 ## QR sheets
-- Our department had 2 floors with 12 rooms each so I used 10 QR codes per room ultimately resulting in 240 QR codesfrom which user only plays for 20 correct QR codes :grin:. Making it most complicated trivia game of all time in a techfest :smiling_imp:\
-- Here's one sheet, you can create as many as u want. I've created just 24 sheets (Note that AV001 is the name of the classroom)
+- Our department had 2 floors with 12 rooms each so I used 10 QR codes per room ultimately resulting in 240 QR codesfrom which user only plays for 20 correct QR codes :grin:. Making it most complicated trivia game of all time in a techfest :smiling_imp:
+- Here's one sheet, you can create as many as u want. I've created just 24 sheets (AV001 is the name of the classroom)
 ![QR Sheet - AV001](https://i.imgur.com/d2pUNlG.jpg)
 ## Bugs
 - The QR code scanner which is based on JavaScript that I've used in the app is not working properly in some devices.
