@@ -7,7 +7,7 @@ var types = [];
 var arr = [];
 const mongoose = require('mongoose');
 var mongodb = require('mongodb');
-mongoose.connect('mongodb://admin:admin123@ds245762.mlab.com:45762/cyw', {useNewUrlParser: true});
+mongoose.connect('mongodb://mongolab_url', {useNewUrlParser: true});
 let connection = mongoose.connection;
 
 var rooms = ['AV001','AV002','AV003','AV004','AV005','AV006','AV007','AV008','AV009','AV010','AV011','AV012','AV101','AV102','AV103','AV104','AV105','AV106','AV107','AV108','AV109','AV110','AV111','AV112'];
