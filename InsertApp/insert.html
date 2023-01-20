@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crack Your Way - Insert Questions</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet">
+	<style type="text/css">
+		textarea{
+			resize: none;
+		}
+		body{
+			background-image: url('05.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.insert{
+			width: 180px;
+		}
+		#opt_a, #opt_b, #opt_c, #opt_d {
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="col-sm-2">&nbsp</div>
+		<div class="col-sm-8">
+			<center><h3 style="font-family: 'Cookie', cursive; font-size: 50px; color: white;">Crack Your Way - Insert</h3></center>
+			<br>
+			<form class="form-horizontal" id="form">
+			<div class="form-group">
+			  <textarea class="form-control" rows="5" placeholder="Enter Question" id="que" name="que"></textarea>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<center>
+					<div class="form-group">
+					  <input type="text" class="form-control insert" id="opt_a" placeholder="Enter Option A" name="opt_a">&nbsp&nbsp
+					  <input type="text" class="form-control insert" id="opt_b" placeholder="Enter Option B" name="opt_b">&nbsp&nbsp
+					  <input type="text" class="form-control insert" id="opt_c" placeholder="Enter Option C" name="opt_c">&nbsp&nbsp
+					  <input type="text" class="form-control insert" id="opt_d" placeholder="Enter Option D" name="opt_d">
+					</div>
+					</center>
+				</div>
+			</div>
+				<div class="form-group">
+					<center>
+						<label for="select" style="color: white;">Select Correct Option:</label>
+					<select class="form-control" style="width: 58px;" id="correct" name="correct">
+						<option>A</option>
+						<option>B</option>
+						<option>C</option>
+						<option>D</option>
+					</select>
+					</center>
+				</div>
+			<center><button type="submit" class="btn btn-default">Submit</button></center>
+			</form>
+		</div>
+		<div class="col-sm-2">&nbsp</div>
+</div>
+<script type="text/javascript">
+	$('#form').submit(function(event){
+	  event.preventDefault();
+	  var formData = $(this).serialize();
+	  $.post("http://127.0.0.1:3000/submit", formData).done(function(){
+		console.log("Successfully Sent!");
+	  });
+	  $("#form").trigger("reset");
+	  $("#que").focus();
+	});
+  </script>
+</body>
+</html>

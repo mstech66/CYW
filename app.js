@@ -9,11 +9,11 @@ var hbs = require('express-handlebars');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mongodb = require('mongodb');
-mongoose.connect('mongodb://admin:admin123@ds245762.mlab.com:45762/cyw', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://manthan1:oIg1de2GCSCEMcQR@cluster0.ty2uj.mongodb.net/cyw?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 let connection = mongoose.connection;
 var app = express();
 const MongoStore = require('connect-mongo')(session);
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 // view engine setup
 app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir:__dirname+'/views/layouts/'}));
 app.set('views', path.join(__dirname, 'views'));
